@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prez-k8s-ext-name
+spec:
+  type: ExternalName
+  externalName: elixir-lang.org
+  ports:
+    - port: 443

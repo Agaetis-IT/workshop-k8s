@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: prez-k8s-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prez-k8s-pod
+  template:
+    metadata:
+      labels:
+        app: prez-k8s-pod
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
+#        image: luksa/kubia:v2

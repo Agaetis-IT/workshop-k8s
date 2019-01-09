@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prez-k8s-pod-with-pvc
+spec:
+  volumes:
+    - name: mongodb-data
+      persistentVolumeClaim:
+        claimName: prez-k8s-pvc-with-disk
+  containers:
+    - image: mongo
+      name: mongodb
+      volumeMounts:
+      - name: mongodb-data
+        mountPath: /data/db

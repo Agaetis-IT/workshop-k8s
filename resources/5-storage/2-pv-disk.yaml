@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prez-k8s-pv-with-disk
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  azureDisk:
+    kind: Managed
+    diskName: prez-k8s-static-disk
+    diskURI: /subscriptions/4aea99db-397a-45e5-a508-e6e06db77164/resourceGroups/MC_prez-k8s-rg_prez-k8s_eastus/providers/Microsoft.Compute/disks/prez-k8s-static-disk

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prez-k8s-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 8888
+      targetPort: 8080
+      nodePort: 30123
+  selector:
+    app: prez-k8s-pod

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prez-k8s-dyn-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: prez-k8s-storageclass
+  resources:
+    requests:
+      storage: 1Gi
