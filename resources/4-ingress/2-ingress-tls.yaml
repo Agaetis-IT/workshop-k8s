@@ -1,10 +1,10 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: prez-k8s-ingress-tls
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
@@ -12,7 +12,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /prezdulundi-tls
+          - path: /workshop-k8s-pp-tls
             backend:
               serviceName: prez-k8s-load-balancer
               servicePort: 80

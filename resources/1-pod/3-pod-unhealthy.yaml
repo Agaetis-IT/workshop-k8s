@@ -16,9 +16,9 @@ spec:
       limits:
         cpu: 0.5
         memory: 128Mi
-#    livenessProbe:
-#      httpGet:
-#        path: /
-#        port: 8080
-#      initialDelaySeconds: 5
-#      periodSeconds: 3
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 3 

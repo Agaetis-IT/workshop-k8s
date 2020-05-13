@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: prez-k8s-ingress
@@ -8,9 +8,9 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - http:
-        paths:
-          - path: /prezdulundi
-            backend:
-              serviceName: prez-k8s-load-balancer
-              servicePort: 80
+  - http:
+      paths:
+      - path: /workshop-k8s-pp
+        backend:
+          serviceName: prez-k8s-load-balancer
+          servicePort: 80

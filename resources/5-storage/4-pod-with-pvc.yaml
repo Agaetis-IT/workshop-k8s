@@ -8,7 +8,7 @@ spec:
       persistentVolumeClaim:
         claimName: prez-k8s-pvc-with-disk
   containers:
-    - image: mongo
+    - image: mongo:3.6
       name: mongodb
       volumeMounts:
       - name: mongodb-data
